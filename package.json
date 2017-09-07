@@ -60,5 +60,10 @@
       "semi": 2
     }
   },
-  "sasslintConfig": "sass-lint.yml"
+  "sasslintConfig": "sass-lint.yml",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5"
+  }
 }
