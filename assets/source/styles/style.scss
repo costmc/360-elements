@@ -12,13 +12,17 @@ $dark-blue: #10384E;
 .header-top {
 	padding-top: 90px;
 	font-family: $font-family-serif;
-	font-size: 60px;
+	font-size: 3.75rem;
 	font-weight: bold;
 	line-height: 1.17;
 	text-align: left;
 	color: #fff;
 	span {
 	color: $light-gold;
+	}
+	@include media-breakpoint-down(sm) {
+		font-size: 2rem;
+		padding-top: 3rem;
 	}
 }
 
@@ -28,6 +32,10 @@ $dark-blue: #10384E;
 	text-align: left;
 	font-weight: 300;
 	color: $light-gold;
+	@include media-breakpoint-down(sm) {
+		font-size: 1.3rem;
+		line-height: normal;
+	}
 }
 
 .title {
@@ -38,11 +46,19 @@ $dark-blue: #10384E;
 	color: $dark-blue;
 	letter-spacing: 0;
 	line-height: 66px;
+	@include media-breakpoint-down(md) {
+		font-size: 2rem;
+		line-height: normal;
+	}
+
 }
 
 // Element styles
 	hr {
-		color: #c9d5ec
+		color: #c9d5ec;
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
 	}
 	.p-70 {
 		padding-bottom: 70px;
@@ -80,7 +96,9 @@ html, body {
 	min-height: 100%;
 	padding-bottom: 130px;
 	.navbar {
-		padding: 0;
+		padding-left: 0;
+		padding-right: 0;
+
 	}
 	#mainNav {
 	min-height: 70px;
@@ -88,20 +106,14 @@ html, body {
 	.nav-item.active .nav-link {
 		border-bottom: 1px solid $light-gold;
 	}
-	.nav-item {
+	.nav-item.lightable {
 		&.active , &:hover, &:focus {
-			.nav-link, .nav-link.phone {
+			.nav-link {
 				font-size: 12px;
-				.logo {
-				 border: 0;
-				 height: 2.3em;
-				 padding-bottom: 0.4em;
-				 max-width: initial;
-				 @include media-breakpoint-down(md){
-					 max-width: 100%;
-					 height: auto;
-					 padding-bottom: 0;
-					 }
+				 @include media-breakpoint-down(lg) {
+					 font-size: 11px;
+					 padding-left: 0;
+					 padding-right: 0;
 				 }
 				 transition: all 0.3s ease-out;
 				 color: $light-gold;
@@ -109,8 +121,29 @@ html, body {
 			 }
 		}
 	}
-	.nav-item.col .nav-link {
+	.nav-item .nav-link {
+		.logo {
+		 border: 0;
+		 height: 2.3em;
+		 padding-bottom: 0.4em;
+		 max-width: initial;
+		 @include media-breakpoint-down(md){
+			 max-width: 100%;
+			 height: auto;
+			 padding-bottom: 0.1em;
+			}
+			@include media-breakpoint-down(sm){
+ 			 max-width: 70%;
+ 			 height: auto;
+			 margin-left: auto;
+			 margin-right: auto;
+ 			 padding-bottom: 0.1em;
+ 			 }
+		 }
 		 border-bottom: 1px solid rgba(0, 0, 0, 0);
+		 @include media-breakpoint-down(sm){
+			border-bottom: none;
+			}
 	 	 font-weight: 500;
 		 padding: 0;
 		 margin: .5rem 1rem;
@@ -126,6 +159,10 @@ html, body {
 			 padding-left: 0;
 			 padding-right: 0;
 		 }
+		 @include media-breakpoint-down(md) {
+			 margin: .25rem .5rem;
+		 }
+
 		 &.phone {
 				font-family: $font-family-serif;
 				font-size: 13px;
@@ -149,6 +186,9 @@ html, body {
 		text-align: left;
 		color: #484d53;
 		border-left: 1px solid #fdc318;
+		@include media-breakpoint-down(sm) {
+			border-left: none;
+		}
 	}
 
 	.container {
@@ -156,6 +196,9 @@ html, body {
 	}
 	.logo {
 		padding-right: 10px;
+		@include media-breakpoint-down(md) {
+			padding-right: 0;
+		}
 	}
 	.card {
 		p {
@@ -169,6 +212,9 @@ html, body {
 		letter-spacing: 0;
 		line-height: 30px;
 		padding: 50px 60px;
+		@include media-breakpoint-down(md) {
+			padding: 40px 35px;
+		}
 		text-align: center;
 		box-shadow: 0 7.5px 15px 0 rgba(0, 0, 0, 0.05);
 		border: none;
@@ -290,6 +336,30 @@ html, body {
 		line-height: 1.29;
 		text-align: center;
 		color: #484d53;
+		// @include media-breakpoint-down(sm) {
+		// 	font-size: 13px;
+		// }
+	}
+	.row.images {
+		img {
+			width: 50% !important;
+			@include media-breakpoint-down(sm) {
+				width: 15% !important;
+			}
+			@include media-breakpoint-down(xs) {
+				width: 25% !important;
+			}
+		}
+		.desc {
+			padding-top: 15px;
+			margin-bottom: 2rem;
+			width: 50%;
+			margin-left: auto;
+			margin-right: auto;
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -303,12 +373,18 @@ html, body {
 		color: $light-gold;
 		padding-bottom: 47px;
 		padding-top: 90px;
+		@include media-breakpoint-down(md) {
+			padding-top: 60px;
+		}
 	}
 	form {
 		padding-bottom: 70px;
 	}
 	.btn {
 		margin-bottom: 100px;
+		@include media-breakpoint-down(md) {
+			margin-bottom: 70px;
+		}
 	}
 	.desc {
 	font-size: 12px;

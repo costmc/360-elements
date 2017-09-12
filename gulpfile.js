@@ -61,6 +61,26 @@ gulp.task('no-server', function() {
   gulp.start('twig', 'styles', 'scripts', 'img', 'cache', 'watch');
 });
 
+// Только стили
+gulp.task('styles', function() {
+  gulp.start('styles');
+});
+
+// Живая без картинок
+gulp.task('no-pics', function() {
+  gulp.start('twig', 'styles', 'scripts', 'cache', 'watch', 'server');
+});
+
+// Одноразовая без картинок
+gulp.task('fast', function() {
+  gulp.start('twig', 'styles', 'cache', 'server');
+});
+
+// Одноразовая сборка ,ез картинок
+gulp.task('start-no-pics', function() {
+  gulp.start('twig', 'styles', 'scripts', 'cache');
+});
+
 // Федеральная служба по контролю за оборотом файлов
 gulp.task('watch', function() {
   gulp.watch(paths.templates + '**/*.twig', ['twig']);
