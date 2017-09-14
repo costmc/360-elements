@@ -17,6 +17,7 @@ $dark-blue: #10384E;
 	line-height: 1.17;
 	text-align: left;
 	color: #fff;
+	padding-bottom: 0.6em;
 	span {
 	color: $light-gold;
 	}
@@ -31,6 +32,7 @@ $dark-blue: #10384E;
 	line-height: 30px;
 	text-align: left;
 	font-weight: 300;
+
 	color: $light-gold;
 	@include media-breakpoint-down(sm) {
 		font-size: 1.3rem;
@@ -96,85 +98,101 @@ html, body {
 	background-size: cover;
 	min-height: 100%;
 	padding-bottom: 130px;
-	.navbar {
-		padding-left: 0;
-		padding-right: 0;
+	padding-top: 8em;
+}
 
-	}
-	#mainNav {
-	min-height: 70px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-	.nav-item.active .nav-link {
-		border-bottom: 1px solid $light-gold;
-	}
-	.nav-item.lightable {
-		&.active , &:hover, &:focus {
-			.nav-link {
-				font-size: 12px;
-				 @include media-breakpoint-down(lg) {
-					 font-size: 11px;
-					 padding-left: 0;
-					 padding-right: 0;
-				 }
-				 transition: all 0.3s ease-out;
-				 color: $light-gold;
-				 border-bottom: 1px solid $light-gold;
-			 }
+.navbar {
+	padding-left: 0;
+	padding-right: 0;
+
+}
+
+#navbar-main {
+	transition: all .3s ease;
+	&.bg-dark {
+		background-color: rgba(0, 0, 0, 0.83) !important;
+		#mainNav {
+			border-bottom: none;
+			min-height: 0;
 		}
 	}
-	.nav-item .nav-link {
-		.logo {
-		 border: 0;
-		 height: 2.3em;
-		 padding-bottom: 0.4em;
-		 max-width: initial;
-		 @include media-breakpoint-down(md){
-			 max-width: 100%;
-			 height: auto;
-			 padding-bottom: 0.1em;
-			}
-			@include media-breakpoint-down(sm){
- 			 max-width: 70%;
- 			 height: auto;
-			 margin-left: auto;
-			 margin-right: auto;
- 			 padding-bottom: 0.1em;
- 			 }
-		 }
-		 border-bottom: 1px solid rgba(0, 0, 0, 0);
-		 @include media-breakpoint-down(sm){
-			border-bottom: none;
-			}
-	 	 font-weight: 500;
-		 padding: 0;
-		 margin: .5rem 1rem;
-		 display: inline-block;
-		 font-size: 12px;
-	 	 text-align: center;
-		 white-space: nowrap;
-	 	 color: #ffffff;
-		 letter-spacing: 0.3px;
-	 	 text-transform: uppercase;
-		 @include media-breakpoint-down(lg) {
-			 font-size: 11px;
-			 padding-left: 0;
-			 padding-right: 0;
-		 }
-		 @include media-breakpoint-down(md) {
-			 margin: .25rem .5rem;
-		 }
 
-		 &.phone {
-				font-family: $font-family-serif;
-				font-size: 13px;
-				color: #FFFFFF;
-				font-weight: 500;
-				white-space: nowrap;
-				@include media-breakpoint-down(lg) {
-					font-size: 12px;
-				}
+}
+
+#mainNav {
+min-height: 70px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+transition: all 0.3s ease;
+.nav-item.active .nav-link {
+	border-bottom: 1px solid $light-gold;
+}
+.nav-item.lightable {
+	&.active , &:hover, &:focus {
+		.nav-link {
+			font-size: 12px;
+			 @include media-breakpoint-down(lg) {
+				 font-size: 11px;
+				 padding-left: 0;
+				 padding-right: 0;
+			 }
+			 transition: all 0.3s ease-out;
+			 color: $light-gold;
+			 border-bottom: 1px solid $light-gold;
 		 }
-	 	}
+	}
+}
+.nav-item .nav-link {
+	.logo {
+	 border: 0;
+	 height: 2.3em;
+	 padding-bottom: 0.4em;
+	 max-width: initial;
+	 @include media-breakpoint-down(md){
+		 max-width: 100%;
+		 height: auto;
+		 padding-bottom: 0.1em;
+		}
+		@include media-breakpoint-down(sm){
+		 max-width: 70%;
+		 height: auto;
+		 margin-left: auto;
+		 margin-right: auto;
+		 padding-bottom: 0.1em;
+		 }
+	 }
+	 border-bottom: 1px solid rgba(0, 0, 0, 0);
+	 @include media-breakpoint-down(sm){
+		border-bottom: none;
+		}
+	 font-weight: 700;
+	 padding: 0;
+	 margin: .5rem 1rem;
+	 display: inline-block;
+	 font-size: 12px;
+	 text-align: center;
+	 white-space: nowrap;
+	 color: #ffffff;
+	 letter-spacing: 0.3px;
+	 text-transform: uppercase;
+	 @include media-breakpoint-down(lg) {
+		 font-size: 11px;
+		 padding-left: 0;
+		 padding-right: 0;
+	 }
+	 @include media-breakpoint-down(md) {
+		 margin: .25rem .5rem;
+	 }
+
+	 &.phone {
+			font-family: $font-family-serif;
+			font-size: 13px;
+			color: #FFFFFF;
+			font-weight: 600;
+			white-space: nowrap;
+			@include media-breakpoint-down(lg) {
+				font-size: 12px;
+			}
+	 }
 	}
 }
 
@@ -208,7 +226,6 @@ html, body {
 			font-weight: 500;
 		}
 		margin-top: 54px;
-		margin-bottom: 80px;
 		color: #484D53;
 		letter-spacing: 0;
 		line-height: 30px;
@@ -244,6 +261,10 @@ html, body {
 			margin-bottom: 22px;
 		}
 	}
+}
+
+#why {
+	padding-top: 80px;
 }
 
 .onethird {
@@ -348,8 +369,12 @@ html, body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding-bottom: 80px;
-	padding-top: 25em;
+	padding-top: 15em;
 	margin-top: -5em;
+	#how {
+		padding-top: 10em;
+	}
+
 	.desc {
 		padding-top: 27px;
 		font-size: 14px;
@@ -388,7 +413,7 @@ html, body {
 	background-position: center;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 130%;
 	.title {
 		color: $light-gold;
 		padding-bottom: 47px;
@@ -443,8 +468,18 @@ html, body {
 	&.clicked {
 		pointer-events: auto;
 	}
-	.card {
-		
+	.content {
+		background-color: $light-gold;
+		.card {
+			top: 15px;
+			padding-top: 9px;
+			.desc {
+				font-size: 7px;
+			  line-height: 1.43;
+			  text-align: center;
+			  color: #484d53;
+			}
+		}}
 	}
 }
 
