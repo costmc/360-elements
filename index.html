@@ -4,7 +4,7 @@
   <title>360 Elements</title>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css?v=59901757eb2370c097f8121303fc74e8" rel="stylesheet">
 </head>
 <body>
 
@@ -377,7 +377,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
   <!-- <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script> -->
-  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/scrollreveal.min.js?v=5deb4348d63c0bfbce81c338d35db100"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoZx5O_kKAhYkhIy3QPRjD06r2QA3wZFI"></script>
 
 <script type="text/javascript">
@@ -390,107 +390,102 @@
         var mapOptions = {
             // How zoomed in you want the map to start at (always required)
             zoom: 17,
-
             // The latitude and longitude to center the map (always required)
-            center: new google.maps.LatLng(55.720602, 37.635484), // New York
-
+            center: new google.maps.LatLng(55.720602, 37.635484), //
             // How you would like to style the map.
             // This is where you would paste any style found on Snazzy Maps.
             styles:
-[
-    {
-        "featureType": "landscape",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "stylers": [
-            {
-                "hue": "#00aaff"
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "gamma": 2.15
-            },
-            {
-                "lightness": 12
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "lightness": 24
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 57
-            }
-        ]
-    }
-]
+          [
+              {
+                  "featureType": "landscape",
+                  "elementType": "labels",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "transit",
+                  "elementType": "labels",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "poi",
+                  "elementType": "labels",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "water",
+                  "elementType": "labels",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "labels.icon",
+                  "stylers": [
+                      {
+                          "visibility": "off"
+                      }
+                  ]
+              },
+              {
+                  "stylers": [
+                      {
+                          "hue": "#00aaff"
+                      },
+                      {
+                          "saturation": -100
+                      },
+                      {
+                          "gamma": 2.15
+                      },
+                      {
+                          "lightness": 12
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "labels.text.fill",
+                  "stylers": [
+                      {
+                          "visibility": "on"
+                      },
+                      {
+                          "lightness": 24
+                      }
+                  ]
+              },
+              {
+                  "featureType": "road",
+                  "elementType": "geometry",
+                  "stylers": [
+                      {
+                          "lightness": 57
+                      }
+                  ]
+              }
+          ]
         };
 
         // Get the HTML DOM element that will contain your map
         // We are using a div with id="map" seen below in the <body>
         var mapElement = document.getElementById('map');
-
         // Create the Google Map using our element and options defined above
         var map = new google.maps.Map(mapElement, mapOptions);
-
-
                 var myMarker = {
                           path: 'M256,0C153.755,0,70.573,83.182,70.573,185.426c0,126.888,165.939,313.167,173.004,321.035 c6.636,7.391,18.222,7.378,24.846,0c7.065-7.868,173.004-194.147,173.004-321.035C441.425,83.182,358.244,0,256,0z M256,278.719 c-51.442,0-93.292-41.851-93.292-93.293S204.559,92.134,256,92.134s93.291,41.851,93.291,93.293S307.441,278.719,256,278.719z',
                           fillColor: '#ffcd59',
@@ -498,8 +493,6 @@
                           scale: 0.1,
                           strokeWeight: 0
                         };
-
-
         // Let's also add a marker while we're at it
         var marker = new google.maps.Marker({
             position: map.getCenter(),
@@ -507,9 +500,35 @@
             icon: myMarker,
             title: '115054, г. Москва, ул. Дубининская 57, строение 9'
         });
+
+        var contentString = '<div id="content">'+
+                    '<div id="siteNotice">'+
+                    '</div>'+
+                    '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+                    '<div id="bodyContent">'+
+                    '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+                    'sandstone rock formation in the southern part of the '+
+                    'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+                    'south west of the nearest large town, Alice Springs; 450&#160;km '+
+                    '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+                    'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+                    'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+                    'Aboriginal people of the area. It has many springs, waterholes, '+
+                    'rock caves and ancient paintings. Uluru is listed as a World '+
+                    'Heritage Site.</p>'+
+                    '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+                    'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+                    '(last visited June 22, 2009).</p>'+
+                    '</div>'+
+                    '</div>';
+                var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+                });
     }
+    infowindow.open(map, marker);
+
 </script>
-  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/scripts.js?v=36f449f27ba75027e1b1ae3496442323"></script>
   <script>
   	var scroll = new SmoothScroll('a[href*="#"]');
   </script>

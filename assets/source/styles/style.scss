@@ -54,6 +54,7 @@ $dark-blue: #10384E;
 }
 
 // Element styles
+
 	hr {
 		color: #c9d5ec;
 		@include media-breakpoint-down(sm) {
@@ -439,10 +440,11 @@ html, body {
 	}
 	#map {
 		pointer-events: none;
-
-	}
-	#map.clicked{
+	&.clicked {
 		pointer-events: auto;
+	}
+	.card {
+		
 	}
 }
 
