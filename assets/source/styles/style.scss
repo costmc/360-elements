@@ -22,9 +22,9 @@ $dark-blue: #10384E;
 	span {
 	color: $light-gold;
 	}
-	@include media-breakpoint-down(sm) {
-		font-size: 2rem;
-		padding-top: 3rem;
+	@include media-breakpoint-down(md) {
+		font-size: 1.85rem;
+		padding-top: 1.5rem
 	}
 }
 
@@ -32,12 +32,12 @@ $dark-blue: #10384E;
 	font-size: 28px;
 	line-height: 30px;
 	text-align: left;
-	font-weight: 300;
+	font-weight: 400;
 
 	color: $light-gold;
 	@include media-breakpoint-down(sm) {
-		font-size: 1.3rem;
-		line-height: normal;
+		font-size: 1rem;
+		line-height: 1.5rem;
 	}
 }
 
@@ -82,6 +82,12 @@ $dark-blue: #10384E;
 		box-shadow: 0 14px 26px -12px rgba(246, 175, 52, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(212, 159, 35, 0.2);
 		background-color: darken(#FBBC2A, 10%);
 	}
+	@include media-breakpoint-down(sm) {
+		font-size: 11px;
+		text-transform: uppercase;
+		color: #363636;
+		letter-spacing: 0.2px;
+	}
 }
 
 // section styles
@@ -93,13 +99,19 @@ html, body {
 
 .first {
 	background-image: url('../img/hero.png');
-	background-position: center;
+	background-position: 70% 20%;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 100%;
 	padding-bottom: 130px;
 	padding-top: 8em;
+	.btn.btn-yellow {
+		padding-top: 3rem;
+		@include media-breakpoint-down(sm) {
+			margin-top: 1rem;
+		}
+	}
 }
 
 .navbar {
@@ -132,11 +144,25 @@ html, body {
 			margin-top: 5px;
 		}
 	}
+	.navbar-toggler {
+		margin-left: auto;
+		border: none;
+		color: white !important;
+	}
+	.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+	}
+	.container {
+			padding: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+			@include media-breakpoint-down(md) { //нав сложен
+			padding-bottom: 16px;
+		}
+	}
 }
 
 #mainNav {
 min-height: 70px;
-border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 transition: all 0.3s ease;
 .nav-item.active .nav-link {
 	border-bottom: 1px solid $light-gold;
@@ -157,24 +183,6 @@ transition: all 0.3s ease;
 	}
 }
 .nav-item .nav-link {
-	.logo {
-	 border: 0;
-	 height: 2.3em;
-	 padding-bottom: 0.4em;
-	 max-width: initial;
-	 @include media-breakpoint-down(md){
-		 max-width: 100%;
-		 height: auto;
-		 padding-bottom: 0.1em;
-		}
-		@include media-breakpoint-down(sm){
-		 max-width: 70%;
-		 height: auto;
-		 margin-left: auto;
-		 margin-right: auto;
-		 padding-bottom: 0.1em;
-		 }
-	 }
 	 border-bottom: 1px solid rgba(0, 0, 0, 0);
 	 @include media-breakpoint-down(sm){
 		border-bottom: none;
@@ -197,7 +205,6 @@ transition: all 0.3s ease;
 	 @include media-breakpoint-down(md) {
 		 margin: .25rem .5rem;
 	 }
-
 	 &.phone {
 			font-family: $font-family-serif;
 			font-size: 13px;
@@ -210,6 +217,30 @@ transition: all 0.3s ease;
 	 }
 	}
 }
+
+.nav-item.logoed .nav-link {
+	@include media-breakpoint-down(sm){
+		padding: 0;
+	}
+	.logo {
+	 border: 0;
+	 height: 2.3em;
+	 padding-bottom: 0.4em;
+	 max-width: initial;
+	 @include media-breakpoint-down(md){
+		 max-width: 100%;
+		 height: auto;
+		 padding-bottom: 0.1em;
+		}
+		@include media-breakpoint-down(sm){
+		 max-width: 70%;
+		 height: auto;
+		 margin-left: auto;
+		 margin-right: auto;
+		 padding-bottom: 0.0em;
+		 }
+	 }
+ }
 
 .second {
 	.desc {
