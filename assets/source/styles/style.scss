@@ -107,7 +107,7 @@ html, body {
 	padding-bottom: 130px;
 	padding-top: 8em;
 	.btn.btn-yellow {
-		padding-top: 3rem;
+		margin-top: 3rem;
 		@include media-breakpoint-down(sm) {
 			margin-top: 1rem;
 		}
