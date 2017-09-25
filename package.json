@@ -11,8 +11,7 @@
     "no-server": "node ./node_modules/gulp/bin/gulp.js no-server",
     "styles": "node ./node_modules/gulp/bin/gulp.js styles",
     "no-pics": "node ./node_modules/gulp/bin/gulp.js no-pics",
-    "fast": "node ./node_modules/gulp/bin/gulp.js fast",
-    "start-no-pics": "node ./node_modules/gulp/bin/gulp.js start-no-pics"
+    "fast": "node ./node_modules/gulp/bin/gulp.js fast"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",

@@ -71,13 +71,8 @@ gulp.task('no-pics', function() {
   gulp.start('twig', 'styles', 'scripts', 'cache', 'watch', 'server');
 });
 
-// Одноразовая без картинок
+// Одноразовая сборка без картинок
 gulp.task('fast', function() {
-  gulp.start('twig', 'styles', 'cache', 'server');
-});
-
-// Одноразовая сборка ,ез картинок
-gulp.task('start-no-pics', function() {
   gulp.start('twig', 'styles', 'scripts', 'cache');
 });
 

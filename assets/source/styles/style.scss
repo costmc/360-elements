@@ -1,4 +1,5 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "font-awesome/font-awesome";
 @import "core/variables";
 @import "core/forms";
 
@@ -104,19 +105,33 @@ html, body {
 .navbar {
 	padding-left: 0;
 	padding-right: 0;
-
+	@include media-breakpoint-down(sm) {
+		padding: .5rem 1rem;
+	}
 }
 
 #navbar-main {
 	transition: all .3s ease;
 	&.bg-dark {
-		background-color: rgba(0, 0, 0, 0.83) !important;
+    background-color: rgba(8, 34, 48, 0.85) !important;
+		@include media-breakpoint-down(sm) {
+			background: none !important;
+			&.navbar-dark .navbar-toggler {
+		    background-color: rgba(8, 34, 48, 0.85);
+			}
+		}
 		#mainNav {
 			border-bottom: none;
 			min-height: 0;
 		}
 	}
-
+	@include media-breakpoint-down(sm) {
+		.collapse.show, .collapse {
+			background: rgba(8, 34, 48, 0.85);
+			border-radius: 5px;
+			margin-top: 5px;
+		}
+	}
 }
 
 #mainNav {
@@ -413,7 +428,11 @@ transition: all 0.3s ease;
 	background-position: center;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
-	background-size: 130%;
+	background-size: 150%;
+	padding-bottom: 100px;
+	@include media-breakpoint-down(md) {
+		background-size: cover;
+	}
 	.title {
 		color: $light-gold;
 		padding-bottom: 47px;
@@ -426,10 +445,6 @@ transition: all 0.3s ease;
 		padding-bottom: 70px;
 	}
 	.btn {
-		margin-bottom: 100px;
-		@include media-breakpoint-down(md) {
-			margin-bottom: 70px;
-		}
 	}
 	.desc {
 	font-size: 12px;
@@ -450,6 +465,9 @@ transition: all 0.3s ease;
 		font-weight: bold;
 		font-family: $font-family-serif;
 		color: #fcbf22;
+		@include media-breakpoint-down(sm) {
+			font-size: 25px;
+		}
 	}
 	a.mail {
 		font-size: 18px;
@@ -462,6 +480,9 @@ transition: all 0.3s ease;
 	}
 	.embed-responsive {
 		margin-top: 60px;
+		@include media-breakpoint-down(sm) {
+    padding-top: 110.85714286%;
+		}
 	}
 	#map {
 		pointer-events: none;
@@ -504,4 +525,70 @@ transition: all 0.3s ease;
 	.d-flex div:not(:first-child) {
 		padding-left: 9.5px;
 	}
+}
+
+div.wpcf7 {
+	overflow: hidden !important;
+}
+
+div.wpcf7-spam-blocked,
+div.wpcf7-validation-errors,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-mail-sent-ok {
+	font-weight: 600 !important;
+	font-size: 16px !important;
+	color: rgba(255, 255, 255, 0.8) !important;
+	text-transform: none !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	border: none !important;
+	&::before {
+		font: normal normal normal 1em/1 FontAwesome;
+	}
+}
+
+div.wpcf7-mail-sent-ok {
+	background-color: none !important;
+	border: none !important;
+	&::before {
+		content: "\f00c" !important; //check
+		color: #ffcd59 !important;
+	}
+}
+
+div.wpcf7-mail-sent-ng {
+	background-color: none !important;
+	border: none !important;
+	&::before {
+		content: "\f12a" !important; //exclamation
+		color: #fb0a04 !important;
+	}
+}
+
+div.wpcf7-spam-blocked {
+	background-color: none !important;
+	border: none !important;
+	&::before {
+		content: "\f12a"; //exclamation
+		color: #fb0a04;
+	}
+}
+
+div.wpcf7-validation-errors {
+	background-color: none !important;
+	border: none !important;
+	&::before {
+		content: "\f12a"; //exclamation
+		color: #fb0a04;
+	}
+}
+
+@media all {
+    span.wpcf7-not-valid-tip {
+        color: #fff !important;
+        font-size: 1em !important;
+        font-weight: normal !important;
+        display: block !important;
+				padding-bottom: 1em;
+    }
 }
