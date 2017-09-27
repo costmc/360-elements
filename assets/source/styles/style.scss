@@ -53,7 +53,6 @@ $dark-blue: #10384E;
 		font-size: 2rem;
 		line-height: normal;
 	}
-
 }
 
 // Element styles
@@ -94,7 +93,7 @@ $dark-blue: #10384E;
 
 html, body {
 	min-height: 100%;
-	background-image: linear-gradient(to top, #ffffff, #f2f2f2);
+	background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
 }
 
 .first {
@@ -103,9 +102,10 @@ html, body {
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
-	min-height: 100%;
-	padding-bottom: 130px;
-	padding-top: 8em;
+	min-height: 100vh;
+	// padding-bottom: 130px;
+	// padding-top: 8em;
+
 	.btn.btn-yellow {
 		margin-top: 3rem;
 		@include media-breakpoint-down(sm) {
@@ -250,9 +250,10 @@ transition: all 0.3s ease;
 		line-height: 1.6;
 		text-align: left;
 		color: #484d53;
-		border-left: 1px solid #fdc318;
+		border-left: 0.1em solid #fdc318;
 		@include media-breakpoint-down(sm) {
 			border-left: none;
+			font-size: 1.09em;
 		}
 	}
 
@@ -261,8 +262,10 @@ transition: all 0.3s ease;
 	}
 	.logo {
 		padding-right: 10px;
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(sm) {
 			padding-right: 0;
+			border-bottom: 0.1em solid #ffcd59;
+	    padding-bottom: 16px;
 		}
 	}
 	.card {
@@ -289,6 +292,11 @@ transition: all 0.3s ease;
 		line-height: 24px;
 		text-align: center;
 		color: #484d53;
+		.bord {
+			@include media-breakpoint-down(sm) {
+				border: none !important;
+			}
+		}
 		.bord.f {
 			border: 1px solid #e5e5e5;
 			border-left: 0;
@@ -410,6 +418,9 @@ transition: all 0.3s ease;
 	@include media-breakpoint-down(xl) {
 		background-image: url("../img/graph-m.png");
 	}
+	@include media-breakpoint-down(sm) {
+		// padding-top: 5em;
+	}
 	background-position: top center;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
@@ -417,6 +428,7 @@ transition: all 0.3s ease;
 	padding-bottom: 80px;
 	padding-top: 15em;
 	margin-top: -5em;
+	background-color: #f6f6f6;
 	#how {
 		padding-top: 10em;
 	}
