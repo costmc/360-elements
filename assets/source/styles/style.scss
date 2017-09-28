@@ -9,38 +9,6 @@ $light-gold: #ffcd59;
 $dark-blue: #10384E;
 
 /* Text styles */
-
-.header-top {
-	padding-top: 90px;
-	font-family: $font-family-serif;
-	font-size: 3.75rem;
-	font-weight: bold;
-	line-height: 1.17;
-	text-align: left;
-	color: #fff;
-	padding-bottom: 0.6em;
-	span {
-	color: $light-gold;
-	}
-	@include media-breakpoint-down(md) {
-		font-size: 1.85rem;
-		padding-top: 1.5rem
-	}
-}
-
-.header-second {
-	font-size: 28px;
-	line-height: 30px;
-	text-align: left;
-	font-weight: 400;
-
-	color: $light-gold;
-	@include media-breakpoint-down(sm) {
-		font-size: 1rem;
-		line-height: 1.5rem;
-	}
-}
-
 .title {
 	/* О нас: */
 	font-weight: bold;
@@ -89,6 +57,11 @@ $dark-blue: #10384E;
 	}
 }
 
+button:focus {
+    outline: none;
+    background: none;
+}
+
 // section styles
 
 html, body {
@@ -97,19 +70,64 @@ html, body {
 }
 
 .first {
-	background-image: url('../img/hero.png');
+	background-image: url('../img/hero.jpg');
+	// @include media-breakpoint-down(lg) {
+	// 	background-image: url('../img/hero-m.png');
+	// }
+	.parachute {
+		height: 30px;
+		width: auto;
+	}
 	background-position: 70% 20%;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 100vh;
-	// padding-bottom: 130px;
-	// padding-top: 8em;
-
+	@include media-breakpoint-down(sm) {
+		// min-height: 100%;
+    // padding: 5em 0;
+	}
 	.btn.btn-yellow {
 		margin-top: 3rem;
 		@include media-breakpoint-down(sm) {
 			margin-top: 1rem;
+		}
+	}
+
+	.header-top {
+		font-family: $font-family-serif;
+		// font-size: 3.75rem;
+		font-weight: bold;
+		line-height: 1.17;
+		text-align: left;
+		color: #fff;
+		padding-bottom: 0.4em;
+		span {
+		color: $light-gold;
+		}
+		font-size: 9vw;
+		@include media-breakpoint-up(sm) {
+			font-size: 2.3rem;
+		}
+		@include media-breakpoint-up(md) {
+	    font-size: 2.55rem;
+		}
+		@include media-breakpoint-up(md) {
+	    font-size: 3.25rem;
+		}
+		@include media-breakpoint-up(xl) {
+	    font-size: 3.75rem;
+		}
+	}
+	.header-second {
+		font-size: 28px;
+		line-height: 30px;
+		text-align: left;
+		font-weight: 400;
+		color: $light-gold;
+		@include media-breakpoint-down(sm) {
+			font-size: 1rem;
+			line-height: 1.5rem;
 		}
 	}
 }
@@ -126,7 +144,10 @@ html, body {
 	transition: all .3s ease;
 	&.bg-dark {
     background-color: rgba(8, 34, 48, 0.85) !important;
-		@include media-breakpoint-down(sm) {
+		.container {
+			border: none;
+		}
+		@include media-breakpoint-down(md) {
 			background: none !important;
 			&.navbar-dark .navbar-toggler {
 		    background-color: rgba(8, 34, 48, 0.85);
@@ -134,10 +155,10 @@ html, body {
 		}
 		#mainNav {
 			border-bottom: none;
-			min-height: 0;
+			min-height: 100%;
 		}
 	}
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		.collapse.show, .collapse {
 			background: rgba(8, 34, 48, 0.85);
 			border-radius: 5px;
@@ -157,6 +178,9 @@ html, body {
 			border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 			@include media-breakpoint-down(md) { //нав сложен
 			padding-bottom: 16px;
+			&.b-n {
+				border: none;
+			}
 		}
 	}
 }
@@ -265,7 +289,7 @@ transition: all 0.3s ease;
 		@include media-breakpoint-down(sm) {
 			padding-right: 0;
 			border-bottom: 0.1em solid #ffcd59;
-	    padding-bottom: 16px;
+	    padding-bottom: 1.45em;
 		}
 	}
 	.card {
@@ -288,7 +312,7 @@ transition: all 0.3s ease;
 	}
 
 	.grid {
-		font-size: 16px;
+		font-size: 18px;
 		line-height: 24px;
 		text-align: center;
 		color: #484d53;
@@ -309,7 +333,10 @@ transition: all 0.3s ease;
 			border-right: 1px solid #e5e5e5;
 		}
 		img {
-			height: 50px;
+			height: 60px;
+			@include media-breakpoint-down(sm) {
+				height: 50px;
+			}
 			width: auto;
 			display: block;
 			margin-bottom: 22px;
@@ -328,7 +355,7 @@ transition: all 0.3s ease;
 .third {
 	padding-top: 70px;
 	.title {
-		padding-bottom: 35px;
+		// padding-bottom: 35px;
 	}
 	.desc {
 		font-size: 18px;
@@ -338,19 +365,20 @@ transition: all 0.3s ease;
 		color: #484d53;
 	}
 	.subtitle {
-		padding-top: 52px;
-		padding-bottom: 44px;
+		padding-top: 10px;
+		padding-bottom: 30px;
 		font-size: 22px;
 		font-weight: 500;
 		line-height: 1.36;
 		text-align: center;
 		color: #484d53;
 	}
-	.table {
+	table.table {
 		background-color: #fff;
 		margin-bottom: 40px;
 		box-shadow: 0 7.5px 15px 0 rgba(0, 0, 0, 0.05);
 		border: solid 0.5px #e5e5e5;
+
 		thead {
 			background-color: $light-gold;
 			th {
@@ -360,7 +388,7 @@ transition: all 0.3s ease;
 					padding-top: 5px;
 					padding-bottom: 5px;
 					letter-spacing: 0;
-					font-size: 10px
+					font-size: 12px;
 				}
 				text-transform: uppercase;
 				font-size: 12px;
@@ -370,16 +398,39 @@ transition: all 0.3s ease;
 				color: #10384e;
 				font-weight: 400;
 				border-top: 1px solid #e5e5e5;
+				@include media-breakpoint-down(sm) {
+					font-weight: 700;
+					border: none;
+				}
 			}
 		}
 		td, th {
-			// padding-top: 30px;
-			// padding-bottom: 30px;
 			border-top: 1px solid #e5e5e5;
 			@include media-breakpoint-down(sm) {
 				padding-left: 5px;
 				padding-right: 5px;
 				line-height: initial;
+				border: none;
+			}
+			&.currency {
+				font-size: 18px;
+				font-weight: 600;
+			}
+			&.percent {
+				font-family: $font-family-serif;
+				font-weight: 600;
+			}
+			&.properties {
+				text-transform: uppercase;
+		    color: #a9a9a9;
+		    font-size: 11px;
+		    line-height: 20px;
+		    font-weight: 600;
+			}
+			&.property-values {
+				font-size: 13px;
+				line-height: 1.55em;
+				font-weight: 500;
 			}
 		}
 		th:first-of-type {
@@ -399,15 +450,23 @@ transition: all 0.3s ease;
 			line-height: 1.88;
 			text-align: left;
 			color: #5a6876;
-			@include media-breakpoint-down(sm) {
-				font-size: 10px;
-			}
 			th:first-of-type {
 			font-family: $font-family-serif;
 			font-weight: bold;
 			}
 			td:nth-last-of-type(2), td:last-of-type {
 				text-align: right;
+				@include media-breakpoint-down(sm) {
+					text-align: left;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				td {
+					border-bottom: 1px solid #e5e5e5;
+				}
+				tr.no-b td {
+					border: none;
+				}
 			}
 		}
 	}
@@ -419,38 +478,47 @@ transition: all 0.3s ease;
 		background-image: url("../img/graph-m.png");
 	}
 	@include media-breakpoint-down(sm) {
-		// padding-top: 5em;
+		background-position: 65% -7vw;
+		background-size: 270vw;
+		padding-top: 40vw;
+		margin-top: -3em;
+		#how {
+			padding-top: 0;
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		margin-top: -5em;
+    padding-top: 5em;
+	}
+	#how {
+		padding-top: 10em;
 	}
 	background-position: top center;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding-bottom: 80px;
-	padding-top: 15em;
-	margin-top: -5em;
+	padding-top: 25vh;
+  margin-top: -25vh;
 	background-color: #f6f6f6;
-	#how {
-		padding-top: 10em;
-	}
-
 	.desc {
 		padding-top: 27px;
 		font-size: 14px;
 		line-height: 1.29;
 		text-align: center;
 		color: #484d53;
-		// @include media-breakpoint-down(sm) {
-		// 	font-size: 13px;
-		// }
 	}
 	.row.images {
 		img {
-			width: 50% !important;
-			@include media-breakpoint-down(sm) {
-				width: 15% !important;
+			width: 50%;
+			&.img-lg {
+				width: 45%;
 			}
-			@include media-breakpoint-down(xs) {
-				width: 25% !important;
+			@include media-breakpoint-down(sm) {
+				width: 20%;
+				&.img-lg {
+					width: 17%;
+				}
 			}
 		}
 		.desc {
@@ -459,6 +527,12 @@ transition: all 0.3s ease;
 			width: 50%;
 			margin-left: auto;
 			margin-right: auto;
+			@include media-breakpoint-down(sm) {
+		    width: 75%;
+		    margin-left: auto;
+		    margin-right: auto;
+		    font-size: .9em;
+			}
 			@include media-breakpoint-up(md) {
 				display: none;
 			}
@@ -474,7 +548,8 @@ transition: all 0.3s ease;
 	background-size: 150%;
 	padding-bottom: 100px;
 	@include media-breakpoint-down(md) {
-		background-size: cover;
+		background-size: auto 130%;
+		background-position: 51% 65%;
 	}
 	.title {
 		color: $light-gold;
@@ -498,9 +573,9 @@ transition: all 0.3s ease;
 }
 
 .sixth {
-	padding-top: 70px;
+	padding-top: 50px;
 	.title {
-		padding-bottom: 48px;
+		padding-bottom: 0em;
 	}
 	a.phone {
 		padding-bottom: 29px;
@@ -508,9 +583,13 @@ transition: all 0.3s ease;
 		font-weight: bold;
 		font-family: $font-family-serif;
 		color: #fcbf22;
+		text-decoration: none;
 		@include media-breakpoint-down(sm) {
-			font-size: 25px;
+			font-size: 28px;
 		}
+	}
+	.mailer {
+		padding-top: 15px;
 	}
 	a.mail {
 		font-size: 18px;
@@ -537,9 +616,10 @@ transition: all 0.3s ease;
 		.card {
 			top: 15px;
 			padding-top: 9px;
+			border-radius: 0;
 			.desc {
-				font-size: 7px;
-			  line-height: 1.43;
+				font-size: .8em;
+			  line-height: normal;
 			  text-align: center;
 			  color: #484d53;
 			}
@@ -565,8 +645,29 @@ transition: all 0.3s ease;
 			color: $light-gold;
 		}
 	}
-	.d-flex div:not(:first-child) {
-		padding-left: 9.5px;
+	.d-flex.align-items-center {
+		@include media-breakpoint-up(lg) {
+			width: 90%;
+		}
+	}
+	.d-flex.align-items-center div:not(:first-child) {
+		padding-left: 1em;
+		@include media-breakpoint-down(sm) {
+			padding-left: 1.5em;
+		}
+	}
+	div.d-flex.pb-3 {
+		width: 40%;
+		@include media-breakpoint-down(md) {
+			width: 50%;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+		a {
+			color: $light-gold;
+			font-size: .7em;
+		}
 	}
 }
 

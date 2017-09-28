@@ -28,8 +28,14 @@
     new ScrollMagic.Scene({triggerElement: "#triggered"})
             .setClassToggle("#navbar-main", "bg-dark") // add class toggle
             .addTo(controller);
-    new ScrollMagic.Scene({triggerElement: "#second"})
+    new ScrollMagic.Scene({triggerElement: "#triggered"})
             .setClassToggle(".logoed", "d-none") // add class toggle
+            .addTo(controller);
+    new ScrollMagic.Scene({triggerElement: "#triggered"})
+            .setClassToggle(".logoed", "d-lg-block") // add class toggle
+            .addTo(controller);
+    new ScrollMagic.Scene({triggerElement: "#second"})
+            .setClassToggle("#navbar-main .container", "b-n") // add class toggle
             .addTo(controller);
   </script>
 
