@@ -5,6 +5,9 @@ originals
 .sketch
 .psd
 
+*.sublime-project
+*.sublime-workspace
+
 # Logs
 logs
 *.log
