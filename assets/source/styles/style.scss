@@ -105,7 +105,8 @@ html, body {
 		span {
 		color: $light-gold;
 		}
-		font-size: 9vw;
+		// font-size: 9vw;
+    font-size: 1.8rem;
 		@include media-breakpoint-up(sm) {
 			font-size: 2.3rem;
 		}
@@ -195,8 +196,7 @@ transition: all 0.3s ease;
 	&.active , &:hover, &:focus {
 		.nav-link {
 			font-size: 12px;
-			 @include media-breakpoint-down(lg) {
-				 font-size: 11px;
+			 @include media-breakpoint-down(md) {
 				 padding-left: 0;
 				 padding-right: 0;
 			 }
@@ -206,10 +206,17 @@ transition: all 0.3s ease;
 		 }
 	}
 }
+@include media-breakpoint-down(md) {
+		@-ms-viewport {
+			flex-direction: column;
+		}
+}
 .nav-item .nav-link {
 	 border-bottom: 1px solid rgba(0, 0, 0, 0);
-	 @include media-breakpoint-down(sm){
-		border-bottom: none;
+	 @include media-breakpoint-down(md){
+		padding: .5em 0;
+		font-size: 1em !important;
+		font-weight: 400;
 		}
 	 font-weight: 700;
 	 padding: 0;
@@ -419,10 +426,12 @@ transition: all 0.3s ease;
 			&.percent {
 				font-family: $font-family-serif;
 				font-weight: 600;
+		    padding-left: .5em;
 			}
 			&.properties {
 				text-transform: uppercase;
 		    color: #a9a9a9;
+		    padding-left: .5em;
 		    font-size: 11px;
 		    line-height: 20px;
 		    font-weight: 600;
@@ -657,12 +666,12 @@ transition: all 0.3s ease;
 		}
 	}
 	div.d-flex.pb-3 {
-		width: 40%;
+		// width: 40%;
 		@include media-breakpoint-down(md) {
-			width: 50%;
+			// width: 50%;
 		}
 		@include media-breakpoint-down(sm) {
-			width: 100%;
+			// width: 100%;
 		}
 		a {
 			color: $light-gold;
