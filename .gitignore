@@ -4,7 +4,6 @@ node_modules
 originals
 .sketch
 .psd
-
 *.sublime-project
 *.sublime-workspace
 
